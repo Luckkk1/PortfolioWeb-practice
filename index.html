@@ -9,9 +9,7 @@
     <title>Lee's Portfolio</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="main.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/1c84efee0a.js"
-      crossorigin="anonymous"
+    <script src="https://kit.fontawesome.com/1c84efee0a.js" crossorigin="anonymous"></script>
     ></script>
     <link rel="stylesheet" href="styles.css" />
     <link
@@ -20,12 +18,14 @@
     />
   </head>
   <body>
-    <!-- navBar -->
+    <!-- 네비바 -->
     <section id="navBar">
+      <!-- 로고 -->
       <div class="navBar__logo">
         <img src="img/favicon.png" alt="logo" class="logo__img" />
         <a href="#">Oasis</a>
       </div>
+      <!-- 메뉴 버튼 -->
       <div class="navBar__menuBtns">
         <ul>
           <button class="menuBtn__button">Home</button>
@@ -37,10 +37,40 @@
         </ul>
       </div>
     </section>
-    <!-- mainHome -->
-    <section id="mainHome"></section>
+    <!-- 메인화면 -->
+    <section id="mainHome">
+      <img src="img/oasis.jpeg" alt="oasis" class="mainHome__profile" />
+      <h1>
+        Hello,<br />
+        I'm Oasis
+      </h1>
+      <h2>A Front-end developer in Korea</h2>
+      <button class="mainHome__btn">CONTACT ME</button>
+    </section>
     <!-- about me -->
-    <section id="about"></section>
+    <section id="about">
+      <h1>About me</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi
+        tempore atque repellat sed recusandae commodi iusto id necessitatibus
+        maxime soluta, et sapiente modi esse! Voluptatibus porro quaerat
+        adipisci dolor.
+      </p>
+      <div class="about__languages">
+        <div class="language__major">
+          <i class="fa-brands fa-html5"></i>
+          <h2>HTML</h2>
+        </div>
+        <div class="language__major">
+          <i class="fa-brands fa-css3"></i>
+          <h2>CSS</h2>
+        </div>
+        <div class="language__major">
+          <i class="fa-brands fa-js"></i>
+          <h2>JavaScript</h2>
+        </div>
+      </div>
+    </section>
     <!-- skills -->
     <section id="skills"></section>
     <!-- work -->
