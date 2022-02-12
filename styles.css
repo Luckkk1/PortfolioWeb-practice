@@ -28,9 +28,7 @@
 
   /* size */
   --logo-size: 60px;
-  --base-large: 16px;
-  --base-medium: 12px;
-  --base-regular: 8px;
+  --border-radious: 4px;
 }
 
 /* Universal tags */
@@ -79,12 +77,15 @@ button {
 
 body {
   font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
 }
 
 #navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-black);
 }
 
 .navBar__logo {
@@ -100,7 +101,8 @@ body {
 .navBar__logo a {
   font-size: var(--font-medium);
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--color-white);
+  font-weight: var(--weight-semi-bold);
 }
 
 .navBar__menuBtns {
@@ -111,10 +113,16 @@ body {
 
 .navBar__menuBtns button {
   font-size: var(--font-regular);
-  margin-right: var(--base-large);
-  padding: var(--base-medium);
+  margin-right: 16px;
+  padding: 12px;
+  border-radius: var(--border-radious);
+  color: var(--color-white);
 }
 
-.navBar__menuBtns button:hover {
-  border: solid 1px black;
+.menuBtn__button.active {
+  border: 1px solid white;
+}
+
+.menuBtn__button:hover {
+  background-color: var(--color-dark-white);
 }
