@@ -29,11 +29,22 @@
   /* size */
   --logo-size: 60px;
   --border-radious: 4px;
+
+  /* animation duration */
+  --animation-duration: 300ms;
 }
 
 /* Universal tags */
 * {
   box-sizing: border-box;
+}
+
+/* section centering */
+.section {
+  padding: 50px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Typography */
@@ -134,7 +145,7 @@ body {
 /* mainHome */
 
 #mainHome {
-  background: center/ cover no-repeat url(img/home-background.png);
+  background: center/cover no-repeat url(img/home-background.png);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,7 +160,7 @@ body {
 }
 
 #mainHome h1,
-h2,
+#mainHome h2,
 button {
   color: var(--color-white);
 }
@@ -164,4 +175,73 @@ button {
 
 .mainHome__btn:hover {
   background-color: var(--color-dark-white);
+}
+
+/* About me */
+
+#about {
+  max-width: 1200px;
+  margin: auto;
+}
+
+#about p {
+  margin-top: 30px;
+}
+
+.about__languages {
+  display: flex;
+  justify-content: space-between;
+}
+
+.language__major {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 270px;
+  margin-top: 60px;
+  cursor: pointer;
+  border: 1px solid var(--color-black);
+  border-radius: 50%;
+}
+
+.language__major:hover i {
+  transform: translateY(-30px) scale(1.1);
+}
+
+.language__major i {
+  font-size: 100px;
+  width: 100px;
+  margin-bottom: 10px;
+  transition: transform 200ms linear;
+}
+
+.language__major.html:hover i {
+  color: red;
+}
+
+.language__major.css:hover i {
+  color: var(--color-blue);
+}
+
+.language__major.js:hover i {
+  color: rgb(255, 230, 0);
+}
+
+.language__major.html:hover h2 {
+  transform: rotate(360deg);
+}
+
+.language__major.css:hover h2 {
+  transform: rotate(360deg);
+}
+
+.language__major.js:hover h2 {
+  transform: rotate(360deg);
+}
+
+.language__major h2 {
+  color: var(--color-black);
+  transition: transform 200ms linear;
 }
