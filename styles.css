@@ -81,11 +81,15 @@ body {
   padding: 0;
 }
 
+/* navBar */
+
 #navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-black);
+  position: sticky;
+  top: 0px;
 }
 
 .navBar__logo {
@@ -124,5 +128,40 @@ body {
 }
 
 .menuBtn__button:hover {
+  background-color: var(--color-dark-white);
+}
+
+/* mainHome */
+
+#mainHome {
+  background: center/ cover no-repeat url(img/home-background.png);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.mainHome__profile {
+  width: 200px;
+  margin-top: 36px;
+  border-radius: 50%;
+}
+
+#mainHome h1,
+h2,
+button {
+  color: var(--color-white);
+}
+
+.mainHome__btn {
+  margin: 24px;
+  padding: 12px;
+  border: solid 1px white;
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-regular);
+}
+
+.mainHome__btn:hover {
   background-color: var(--color-dark-white);
 }
