@@ -31,7 +31,7 @@
   --border-radious: 4px;
 
   /* animation duration */
-  --animation-duration: 300ms;
+  --animation-duration: 200ms;
 }
 
 /* Universal tags */
@@ -43,6 +43,10 @@
 .section {
   padding: 50px;
   text-align: center;
+  margin: auto;
+}
+
+.section__container {
   max-width: 1200px;
   margin: auto;
 }
@@ -179,17 +183,13 @@ button {
 
 /* About me */
 
-#about {
-  max-width: 1200px;
-  margin: auto;
-}
-
 #about p {
   margin-top: 30px;
 }
 
 .about__languages {
   display: flex;
+  align-content: space-between;
   justify-content: space-between;
 }
 
@@ -204,6 +204,7 @@ button {
   cursor: pointer;
   border: 1px solid var(--color-black);
   border-radius: 50%;
+  background-color: var(--color-light-white);
 }
 
 .language__major:hover i {
@@ -244,4 +245,67 @@ button {
 .language__major h2 {
   color: var(--color-black);
   transition: transform 200ms linear;
+}
+
+#skills {
+  background-color: var(--color-blue);
+  margin-top: 30px;
+}
+
+#skills h1 {
+  margin-top: 50px;
+}
+
+.skillSet {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0px;
+  color: var(--color-light-white);
+}
+
+.skillSet h3,
+.skillSet p {
+  color: var(--color-light-white);
+}
+
+.skills__left {
+  background-color: var(--color-dark-grey);
+  flex-basis: 60%;
+  padding: 20px;
+}
+
+.skills__right {
+  flex-basis: 40%;
+}
+
+.right__tools {
+  background-color: var(--color-grey);
+  height: 60%;
+  padding: 20px;
+}
+
+.right__etc {
+  background-color: var(--color-light-grey);
+  height: 40%;
+  padding: 20px;
+}
+
+.skill {
+  margin-bottom: 12px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-grey);
+}
+
+.graph {
+  height: 100%;
+  background-color: var(--color-orange);
 }
