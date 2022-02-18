@@ -105,6 +105,7 @@ body {
   background-color: var(--color-black);
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 .navBar__logo {
@@ -144,6 +145,7 @@ body {
 
 .menuBtn__button:hover {
   background-color: var(--color-dark-white);
+  color: var(--color-black);
 }
 
 /* mainHome */
@@ -179,6 +181,7 @@ button {
 
 .mainHome__btn:hover {
   background-color: var(--color-dark-white);
+  color: var(--color-black);
 }
 
 /* About me */
@@ -404,4 +407,40 @@ button {
 .project__description h3,
 .project__description span {
   color: var(--color-white);
+}
+
+#testimonials {
+  background-color: var(--color-light-white);
+  margin-top: 24px;
+}
+
+.testimonial {
+  display: flex;
+  padding: 24px;
+}
+
+.testimonial img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
+}
+
+.testimonial__speechBubble {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.speechBubble__description {
+  margin: 24px;
 }
