@@ -148,6 +148,15 @@ body {
   color: var(--color-black);
 }
 
+.navBar__toggleBtn {
+  color: var(--color-white);
+  position: absolute;
+  right: 32px;
+  top: 18px;
+  font-size: 24px;
+  display: none;
+}
+
 /* mainHome */
 
 #mainHome {
@@ -365,6 +374,7 @@ button {
   height: 280px;
   margin: 2px;
   position: relative;
+  background: var(--color-light-white);
 }
 
 .work__projects img {
@@ -484,4 +494,41 @@ button {
 
 .contact__icon.in i:hover {
   color: skyblue;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  .navBar__toggleBtn {
+    display: block;
+  }
+
+  #navBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navBar__menuBtns {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__languages {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skillSet {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+  }
 }
