@@ -102,10 +102,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-black);
-  position: sticky;
-  top: 0px;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
   z-index: 1;
+  padding: 20px;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+#navBar.navbar--dark {
+  background-color: var(--color-black);
+  padding: 0;
 }
 
 .navBar__logo {
@@ -166,6 +173,7 @@ body {
   align-items: center;
   text-align: center;
   margin: 0;
+  padding-top: 100px;
 }
 
 .mainHome__profile {
