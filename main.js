@@ -27,3 +27,14 @@ navbarMenu.addEventListener("click", (event) => {
     inline: "center",
   });
 });
+
+//메인홈 컨택버튼 스크롤링
+const mainContactBtn = document.querySelector(".mainHome__btn");
+mainContactBtn.addEventListener("click", () => {
+  const scrollTo = document.querySelector("#contact");
+  scrollTo.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "center",
+  });
+});
