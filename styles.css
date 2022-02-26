@@ -375,8 +375,8 @@ button {
 }
 
 .project {
-  width: 280px;
-  height: 280px;
+  width: 250px;
+  height: 250px;
   margin: 2px;
   position: relative;
   background: var(--color-light-white);
@@ -499,6 +499,27 @@ button {
 
 .contact__icon.in i:hover {
   color: skyblue;
+}
+
+/* 애로우업버튼 */
+.arrowUp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 50px;
+  cursor: pointer;
+  background-color: var(--color-dark-white);
+  opacity: 0;
+  transition: opacity calc(var(--animation-duration) * 2);
+  pointer-events: none;
+}
+
+.arrowUp.on {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* responsive */

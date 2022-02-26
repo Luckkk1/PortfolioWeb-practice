@@ -29,6 +29,30 @@ mainContactBtn.addEventListener("click", () => {
   scrollTo("#contact");
 });
 
+// 메인홈 스크롤 페이딩
+const mainHomeInfo = document.querySelector(".mainHome__information");
+const mainHomeHeight = mainHomeInfo.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  mainHomeInfo.style.opacity = 1 - window.scrollY / mainHomeHeight;
+});
+
+// 맨 위로 가기 버튼 보여주기
+const mainHome = document.querySelector("#mainHome");
+const mainHomeHeight2 = mainHome.getBoundingClientRect().height;
+const arrowUp = document.querySelector(".arrowUp");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > mainHomeHeight / 2) {
+    arrowUp.classList.add("on");
+  } else {
+    arrowUp.classList.remove("on");
+  }
+});
+
+// 맨 위로 가기 버튼 기능
+arrowUp.addEventListener("click", () => {
+  scrollTo("#mainHome");
+});
+
 function scrollTo(object) {
   const scrollTo = document.querySelector(object);
   scrollTo.scrollIntoView({
@@ -37,10 +61,3 @@ function scrollTo(object) {
     inline: "center",
   });
 }
-
-// 메인홈 스크롤 페이딩
-const mainHomeInfo = document.querySelector(".mainHome__information");
-const mainHomeHeight = mainHome.getBoundingClientRect().height;
-document.addEventListener("scroll", () => {
-  mainHomeInfo.style.opacity = 1 - window.scrollY / mainHomeHeight;
-});
