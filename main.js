@@ -13,16 +13,6 @@ document.addEventListener("scroll", () => {
 });
 
 // 메뉴 버튼 클릭시 위치로 스크롤 이동
-function scrollTo(object) {
-  const scrollTo = document.querySelector(object);
-  scrollTo.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-    inline: "center",
-  });
-}
-
-//메뉴 바로가기
 const navbarMenu = document.querySelector(".navBar__menuBtns");
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
@@ -37,4 +27,20 @@ navbarMenu.addEventListener("click", (event) => {
 const mainContactBtn = document.querySelector(".mainHome__btn");
 mainContactBtn.addEventListener("click", () => {
   scrollTo("#contact");
+});
+
+function scrollTo(object) {
+  const scrollTo = document.querySelector(object);
+  scrollTo.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "center",
+  });
+}
+
+// 메인홈 스크롤 페이딩
+const mainHomeInfo = document.querySelector(".mainHome__information");
+const mainHomeHeight = mainHome.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  mainHomeInfo.style.opacity = 1 - window.scrollY / mainHomeHeight;
 });
