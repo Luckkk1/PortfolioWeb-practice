@@ -61,3 +61,21 @@ function scrollTo(object) {
     inline: "center",
   });
 }
+
+// 프로젝트
+const buttonContainer = document.querySelector(".work__buttonCategories");
+const pjContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+buttonContainer.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter === null) {
+    return;
+  }
+  projects.forEach((project) => {
+    if (filter === "*" || filter === project.dataset.type) {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+});
