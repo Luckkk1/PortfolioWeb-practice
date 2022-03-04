@@ -59,9 +59,17 @@ const projects = document.querySelectorAll(".project");
 const pjContainer = document.querySelector(".work__projects");
 buttonContainer.addEventListener("click", (e) => {
   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-  if (filter === null) {
+  if (filter == null) {
     return;
   }
+
+  // 선택된 메뉴 선택된 동안에 표시
+  const active = document.querySelector(".category.active");
+  active.classList.remove("active");
+  const target =
+    e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+  target.classList.add("active");
+
   pjContainer.classList.add("anime-out");
   projects.forEach((project) => {
     if (filter === "*" || filter === project.dataset.type) {

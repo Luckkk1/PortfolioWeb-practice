@@ -141,18 +141,16 @@ body {
 .navBar__menuBtns button {
   font-size: var(--font-regular);
   margin-right: 16px;
-  padding: 12px;
+  padding: 14px;
   border-radius: var(--border-radious);
   color: var(--color-white);
-}
-
-.menuBtn__button.active {
-  border: 1px solid white;
+  border: 2px solid transparent;
 }
 
 .menuBtn__button:hover {
   background-color: var(--color-dark-white);
   color: var(--color-black);
+  border: 2px solid white;
 }
 
 .navBar__toggleBtn {
@@ -342,14 +340,14 @@ button {
   padding: 8px 48px;
 }
 
-.Category.active,
-.Category:hover {
+.category.active,
+.category:hover {
   background-color: var(--color-dark-pink);
   color: var(--color-white);
 }
 
-.Category.active .category__count,
-.Category:hover .category__count {
+.category.active .category__count,
+.category:hover .category__count {
   opacity: 1;
   top: 0;
 }
