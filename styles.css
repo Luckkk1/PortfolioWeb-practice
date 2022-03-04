@@ -157,9 +157,15 @@ body {
   color: var(--color-white);
   position: absolute;
   right: 32px;
-  top: 18px;
+  top: 28px;
   font-size: 24px;
   display: none;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+.navBar__toggleBtn.fit {
+  top: 18px;
+  opacity: 1;
 }
 
 /* mainHome */
@@ -421,14 +427,16 @@ button {
   position: relative;
   content: "";
   left: 50%;
-  width: 24px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
   margin-top: 8px;
+  transform: translateX(-50%);
   background-color: var(--color-white);
 }
 
-.project__description h3,
+.project__description h3 {
+  color: var(--color-orange);
+}
 .project__description span {
   color: var(--color-white);
 }
@@ -535,18 +543,28 @@ button {
 @media screen and (max-width: 768px) {
   .navBar__toggleBtn {
     display: block;
+    line-height: 100%;
   }
 
   #navBar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-black);
+    padding: 10px;
   }
 
   .navBar__menuBtns {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
     display: none;
+  }
+
+  .navBar__menuBtns.on {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menuBtn__button {
+    width: 100%;
   }
 
   .about__languages {

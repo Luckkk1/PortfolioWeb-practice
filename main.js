@@ -1,14 +1,17 @@
 "use strict";
 
-// navbar 상단 픽스
+// navbar 상단 픽스, 반응형웹에서 토글버튼 위치조정
 const navbar = document.querySelector("#navBar");
 const navbarHeight = navbar.getBoundingClientRect().height;
+const toggleBtn = document.querySelector(".navBar__toggleBtn");
 
 document.addEventListener("scroll", () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add("navbar--dark");
+    toggleBtn.classList.add("fit");
   } else {
     navbar.classList.remove("navbar--dark");
+    toggleBtn.classList.remove("fit");
   }
 });
 
@@ -20,7 +23,13 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("on");
   scrollTo(link);
+});
+
+// 반응형 메뉴 토글버튼
+toggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("on");
 });
 
 //메인홈 컨택버튼 스크롤링
@@ -70,6 +79,7 @@ buttonContainer.addEventListener("click", (e) => {
     e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
   target.classList.add("active");
 
+  //  프로젝트 애니메이션
   pjContainer.classList.add("anime-out");
   projects.forEach((project) => {
     if (filter === "*" || filter === project.dataset.type) {
