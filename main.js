@@ -53,6 +53,28 @@ arrowUp.addEventListener("click", () => {
   scrollTo("#mainHome");
 });
 
+// 프로젝트
+const buttonContainer = document.querySelector(".work__buttonCategories");
+const projects = document.querySelectorAll(".project");
+const pjContainer = document.querySelector(".work__projects");
+buttonContainer.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter === null) {
+    return;
+  }
+  pjContainer.classList.add("anime-out");
+  projects.forEach((project) => {
+    if (filter === "*" || filter === project.dataset.type) {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+  setTimeout(() => {
+    pjContainer.classList.remove("anime-out");
+  }, 300);
+});
+
 function scrollTo(object) {
   const scrollTo = document.querySelector(object);
   scrollTo.scrollIntoView({
@@ -61,21 +83,3 @@ function scrollTo(object) {
     inline: "center",
   });
 }
-
-// 프로젝트
-const buttonContainer = document.querySelector(".work__buttonCategories");
-const pjContainer = document.querySelector(".work__projects");
-const projects = document.querySelectorAll(".project");
-buttonContainer.addEventListener("click", (e) => {
-  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-  if (filter === null) {
-    return;
-  }
-  projects.forEach((project) => {
-    if (filter === "*" || filter === project.dataset.type) {
-      project.classList.remove("invisible");
-    } else {
-      project.classList.add("invisible");
-    }
-  });
-});
