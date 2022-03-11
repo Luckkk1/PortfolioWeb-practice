@@ -153,6 +153,10 @@ body {
   border: 2px solid white;
 }
 
+.menuBtn__button.mark {
+  border: 2px solid white;
+}
+
 .navBar__toggleBtn {
   color: var(--color-white);
   position: absolute;

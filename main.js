@@ -15,7 +15,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// 메뉴 버튼 클릭시 위치로 스크롤 이동
+// navbar 메뉴 버튼 클릭시 위치로 스크롤 이동
 const navbarMenu = document.querySelector(".navBar__menuBtns");
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
@@ -26,6 +26,64 @@ navbarMenu.addEventListener("click", (event) => {
   navbarMenu.classList.remove("on");
   scrollTo(link);
 });
+
+// // 스크롤시 해당 섹션 navbar메뉴 토글표시
+const sectionIds = [
+  "#mainHome",
+  "#about",
+  "#skills",
+  "#work",
+  "#testimonials",
+  "#contact",
+];
+
+const sections = sectionIds.map((section) => document.querySelector(section));
+const navItems = sectionIds.map((navItem) =>
+  document.querySelector(`[data-link="${navItem}"]`)
+);
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove("mark");
+  selectedNavItem = selected;
+  selectedNavItem.classList.add("mark");
+}
+
+const observerCallback = (entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      // 범위지정
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }
+    }
+  });
+};
+
+// 효과
+window.addEventListener("wheel", () => {
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (
+    window.scrollY + window.innerHeight ===
+    document.body.clientHeight
+  ) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+});
+
+const observerObtion = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.2,
+};
+const observer = new IntersectionObserver(observerCallback, observerObtion);
+sections.forEach((section) => observer.observe(section));
 
 // 반응형 메뉴 토글버튼
 toggleBtn.addEventListener("click", () => {
@@ -100,4 +158,5 @@ function scrollTo(object) {
     block: "start",
     inline: "center",
   });
+  selectNavItem(navItems[sectionIds.indexOf(object)]);
 }
